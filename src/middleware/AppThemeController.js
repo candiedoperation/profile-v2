@@ -21,7 +21,7 @@ const themeChangeEvent = new Event("appthemechanged");
 
 const toggleTheme = (emitter) => {
     (localStorage.getItem("theme") === null) ?
-        localStorage.setItem("theme", "light") :
+        localStorage.setItem("theme", "dark") :
         localStorage.setItem("theme", (localStorage.getItem("theme") === 'light') ? 'dark' : 'light')
 
     if(emitter)
@@ -29,7 +29,7 @@ const toggleTheme = (emitter) => {
 }
 
 const getCurrentTheme = () => {
-    if (localStorage.getItem("theme") === null) localStorage.setItem("theme", "light")
+    if (localStorage.getItem("theme") === null) localStorage.setItem("theme", "dark")
     return localStorage.getItem('theme');
 }
 
@@ -41,7 +41,7 @@ const getCurrentThemeComponent = () => {
     let paletteLight = {
         mode: 'light',
         primary: {
-            main: "#f7bd4a"
+            main: "#f7bd4a",
         },
         secondary: {
             main: "#7093bd",
@@ -51,7 +51,7 @@ const getCurrentThemeComponent = () => {
     let paletteDark = {
         mode: 'dark',
         primary: {
-            main: "#f7bd4a"
+            main: "#f7bd4a",
         },
         secondary: {
             main: "#7093bd",

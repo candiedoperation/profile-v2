@@ -8,11 +8,20 @@ function App() {
   const [themeMode, setThemeMode] = React.useState(getCurrentTheme());
   const [appTheme, setAppTheme] = React.useState(getCurrentThemeComponent())
 
+  React.useEffect(() => {
+    setAppTheme(getCurrentThemeComponent())
+  }, [themeMode])
+
+  const toggleThemeWrapper = () => {
+    toggleTheme(window);
+    setThemeMode(getCurrentTheme())
+  }
+
   return (
     <ThemeProvider theme={appTheme}>
       <CssBaseline />
       <Routes>
-        <Route path="/" element={<HomePage />} exact></Route>
+        <Route path="/" element={<HomePage toggleTheme={toggleThemeWrapper} />} exact></Route>
       </Routes>
     </ThemeProvider>
   );
