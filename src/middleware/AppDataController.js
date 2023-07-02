@@ -163,6 +163,25 @@ const getSkillsHomePageContent = () => {
     ]);
 }
 
+const getOpenSourceHomePageContent = () => {
+    return ([
+        {
+            title: "Open Source Contributions",
+            subtitle: 'https://github.com/candiedoperation',
+            activities: {
+                "Computer Software": [
+                    
+                ],
+            }
+        },
+        {
+            title: "Statistics",
+            subtitle: 'from GitHub',
+            activities: {}
+        }
+    ]);
+}
+
 const getIntroductionHomePageContent = () => {
     return ([
         "a Networking Enthusiast", 
@@ -172,4 +191,4 @@ const getIntroductionHomePageContent = () => {
     ]);
 }
 
-export default { getEducationHomePageContent, getIntroductionHomePageContent, getSkillsHomePageContent }
+export default { getEducationHomePageContent, getIntroductionHomePageContent, getSkillsHomePageContent, getOpenSourceHomePageContent }

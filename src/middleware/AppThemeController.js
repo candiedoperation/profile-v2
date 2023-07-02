@@ -21,7 +21,7 @@ const themeChangeEvent = new Event("appthemechanged");
 
 const toggleTheme = (emitter) => {
     (localStorage.getItem("theme") === null) ?
-        localStorage.setItem("theme", "dark") :
+        localStorage.setItem("theme", "light") :
         localStorage.setItem("theme", (localStorage.getItem("theme") === 'light') ? 'dark' : 'light')
 
     if(emitter)
@@ -29,7 +29,7 @@ const toggleTheme = (emitter) => {
 }
 
 const getCurrentTheme = () => {
-    if (localStorage.getItem("theme") === null) localStorage.setItem("theme", "dark")
+    if (localStorage.getItem("theme") === null) localStorage.setItem("theme", "light")
     return localStorage.getItem('theme');
 }
 

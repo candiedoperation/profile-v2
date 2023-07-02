@@ -5,14 +5,16 @@ import IntroductionHomePage from "../components/IntroductionHomePage";
 import SkillsHomePage from '../components/SkillsHomePage';
 import { getCurrentTheme, setCurrentTheme } from '../middleware/AppThemeController';
 import LicenseFooter from '../components/LicenseFooter';
+import OpenSourceHomePage from '../components/OpenSourceHomePage';
 
 const HomePage = (props) => {
     const [backdropOpen, setBackdropOpen] = React.useState(false);
     const [backdropText, setBackdropText] = React.useState("");
     const introductionHomePageRef = React.useRef();
+    const openSourceHomePageRef = React.useRef();
     const educationHomePageRef = React.useRef();
     const skillsHomePageRef = React.useRef();
-    const appBarLinks = ["Hello!", "Education", "Skills"];
+    const appBarLinks = ["Hello!", "Education", "Skills", "Open Source"];
 
     const handleNav = (navLink) => {
         switch (navLink.toLowerCase()) {
@@ -33,6 +35,12 @@ const HomePage = (props) => {
                     skillsHomePageRef.current.scrollIntoView({ behavior: 'smooth' });
 
                 break;
+
+            case "open source":
+                if (openSourceHomePageRef.current)
+                    openSourceHomePageRef.current.scrollIntoView({ behavior: 'smooth' });
+
+                break;    
 
             default:
                 console.log(`pressed ${navLink.toLowerCase()}`)
@@ -101,6 +109,8 @@ const HomePage = (props) => {
                 <EducationHomePage printing={printing} passRef={educationHomePageRef} />
                 <Divider />
                 <SkillsHomePage passRef={skillsHomePageRef} />
+                <Divider />
+                <OpenSourceHomePage passRef={openSourceHomePageRef} />
                 <Divider />
                 <LicenseFooter sx={{ "@media print": { display: 'none' } }} />
             </Box>
