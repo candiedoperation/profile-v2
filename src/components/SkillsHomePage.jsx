@@ -9,7 +9,7 @@ const SkillsHomePage = (props) => {
     return (
         <>
             <LicenseFooter sx={{ "@media print": { display: 'flex', pageBreakBefore: 'always'  }, display: 'none' }} />
-            <Box ref={props.passRef} sx={{ "@media print": { padding: '20px' }, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '74px 20px 20px 20px' }}>
+            <Box ref={props.passRef} sx={{ "@media print": { padding: '20px' }, display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '74px 20px 74px 20px' }}>
                 <Typography variant="h2" sx={{ fontFamily: 'inter' }}>Skills</Typography>
                 <Alert sx={{ marginTop: '20px', marginBottom: '15px', width: { xs: '100%', md: "80%", lg: "70%" } }} severity='info' color='secondary'>
                     <AlertTitle>Things I'd be keen on telling you</AlertTitle>

@@ -66,13 +66,12 @@ const HomePage = (props) => {
                 /* Switch Theme */
                 localStorage.setItem('printTheme', localStorage.getItem("theme"));
                 if (getCurrentTheme() == "dark") props.toggleTheme();
-
-                /* Add After Print Listener */
-                window.addEventListener("afterprint", () => {
-                    setPrinting(false);
-                    if (localStorage.getItem("printTheme") == "dark") props.toggleTheme();
-                })
             }
+        });
+
+        window.addEventListener("afterprint", () => {
+            setPrinting(false);
+            if (localStorage.getItem("printTheme") == "dark") props.toggleTheme();
         });
     }, []);
 

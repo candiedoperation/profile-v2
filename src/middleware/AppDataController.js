@@ -1,4 +1,4 @@
-import { AutoFixHigh, Storage, EmojiEvents, Forest, LunchDining, Terminal, Theaters } from "@mui/icons-material";
+import { AutoFixHigh, Storage, EmojiEvents, Forest, LunchDining, Terminal, Theaters, Policy, Public, Memory, Lan, VpnLock, Forum, Code } from "@mui/icons-material";
 
 const getEducationHomePageContent = () => {
     return ([
@@ -20,7 +20,7 @@ const getEducationHomePageContent = () => {
         },
         {
             title: "Ryan International School, Navi Mumbai",
-            subtitle: 'Grades 1 and 12 (2010 - 2022)',
+            subtitle: 'Grades 1 and 12 (2010 - 2022), Press to Expand',
             activities: {
                 "Leadership" : [
                     {
@@ -68,14 +68,59 @@ const getEducationHomePageContent = () => {
 const getSkillsHomePageContent = () => {
     return ([
         {
-            title: "Networking and Administration",
+            title: "Networking",
             subtitle: '',
             activities: {
+                "Configuration and Deployment": [
+                    {
+                        icon: <Lan />,
+                        name: "Deploying Networks",
+                        description: "Thorougly understand core Networking Concepts — Routing and Switching, VLANs, Wireless Networks, TCP/IP Stack, Ethernet Standards, etc. Experienced in Designing and Deploying SOHO Networks with ~30 Clients."
+                    },
+                    {
+                        icon: <VpnLock />,
+                        name: "Network Services",
+                        description: "Experienced in deploying OpenVPN, DNS and DHCP Servers (using dnsmasq), NTP Servers and Configuring Routers and Firewalls to aid controlled access to the network via a VPN."
+                    }
+                ],
+            }
+        },
+        {
+            title: "System Administration",
+            subtitle: '',
+            activities: {
+                "Operating Systems": [
+                    {
+                        icon: <Memory />,
+                        name: "Windows",
+                        description: "Advanced Knowledge in Configuring Windows versions XP through 11. Experienced with Group Policies, Windows Registry, Firewall, Services, Disk Management and other Administrative Features."
+                    }, 
+                    {
+                        icon: <Memory />,
+                        name: "Linux (Ubuntu Server and Desktop)",
+                        description: "My Daily Driver. Familiar with most Shell Commands, Permissions, Users and Groups, Package Managers, Netplan, etc. Experienced in Installing and Configuring Ubuntu Server to application needs."
+                    }
+                ],
                 "Service Deployment": [
+                    {
+                        icon: <Policy />,
+                        name: "Active Directory Services",
+                        description: "Samba and Windows Server based Active Directory Services. I've Configured Windows and Deployed Group Policies considering Security and Access Control concepts as the basis."
+                    },
                     {
                         icon: <Storage />,
                         name: "Docker Containerization",
-                        description: "Experienced with deploying and configuring a simple Docker Environment on Linux. Managed 10+ containers in a personal environment. Built projects and created their images using Dockerfile."
+                        description: "Experienced with deploying and configuring a simple Docker Environment on Linux (Docker CLI and Portainer). Managed 10+ containers in a personal environment. Built projects and created their images using Dockerfile."
+                    },
+                    {
+                        icon: <Public />,
+                        name: "BackupPC Server",
+                        description: "Configured a central, automatic, incremental backup server using BackupPC on Linux. Deployed and Managed a server capable serving 10 clients with 3000GB compressed data on Disk."
+                    },
+                    {
+                        icon: <Public />,
+                        name: "The Apache Web Server",
+                        description: "Expierienced in Installing and Configuring apache2 to application requirements. Deployed Reverse Proxies, Load Balancing, SSL and more."
                     }
                 ]
             }
@@ -84,7 +129,35 @@ const getSkillsHomePageContent = () => {
             title: "Computer Programming",
             subtitle: '',
             activities: {
-                
+                "Developer Forums": [
+                    {
+                        icon: <Forum />,
+                        name: "StackOverflow",
+                        description: "Reached ~16000 People with 60+ Answers, 20+ Badges and 680+ Repuation. Priviledged to Upvote, Flag and Review Questions and Answers on the Plaftorm."
+                    }
+                ],
+                "Programming Languages": [
+                    {
+                        icon: <Code />,
+                        name: "Rust",
+                        description: "Understand Core Concepts and Used Async frameworks like Tokio. A notable project involes a VNC Server (Remote Framebuffer Protocol) written from scratch. Interacts Directly with X11 (on Linux), Windows GDI, Services and other Win32 APIs. Captures UAC Prompts and the Login Screen on Windows. Transport methods include TCP and Websocket (Protocol Implemented without Libraries). Read more at the Open-source Section."
+                    },
+                    {
+                        icon: <Code />,
+                        name: "JavaScript",
+                        description: "Experienced in developing and deploying MERN Stacks, Proficient in NodeJS, MongoDB, Electron and the ReactJS Framework. Notable Projects involve an Android app for Veyon, a Classroom Management Platform with Assignments, Tests, Notes and a Live-class platform with a Chat, Collaborative Canvas and Video Conferencing."
+                    },
+                    {
+                        icon: <Code />,
+                        name: "Java",
+                        description: "Understand Core OOP Concepts. Experienced in developing Java Console and Java Swing Applications. Created a proprietary Windows Elevation Provider. This eliminated unintentional malware installation among users. It prevents a user from gaining administrative priviledges unless approved by the IT Department on a realtime per-request basis. The approval method involved OTPs sent via Email, Telegram and other IM Platforms. All Java Based Clients would connect to a NodeJS based server for processing requests."
+                    },
+                    {
+                        icon: <Code />,
+                        name: "Vala",
+                        description: "Introduced to Vala while developing applications for elementaryOS (A Linux Distro). Developed an open-source Pomodoro Timer with a sleek User Interface. Read more at https://github.com/candiedoperation/ordne"
+                    }
+                ]
             }
         }
     ]);
