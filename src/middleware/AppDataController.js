@@ -214,7 +214,7 @@ const getOpenSourceHomePageContent = () => {
             title: "Statistics",
             subtitle: 'from GitHub',
             activities: {},
-            dynamic: [
+            dynamic: [ 
                 <Box sx={{ "@media print": { width: '50%' }, width: { xs: '100%', md: '50%' }, filter: (getCurrentTheme() == "light") ? 'unset' : 'invert(1) hue-rotate(100deg)', flexGrow: 1 }}><img style={{ height: '100%', width: '100%' }} src="https://github-readme-stats.vercel.app/api?username=candiedoperation&show_icons=true&rank_icon=percentile&show=reviews,discussions_started,discussions_answered&include_all_commits=true&disable_animations=true" /></Box>,
                 <Box sx={{ "@media print": { width: '50%' }, width: { xs: '100%', md: '50%' }, padding: '14px', filter: (getCurrentTheme() == "light") ? 'unset' : 'invert(1) hue-rotate(100deg)', flexGrow: 1 }}><img style={{ height: '100%', width: '100%' }} src="https://github-readme-stats.vercel.app/api/top-langs/?username=candiedoperation&layout=donut&disable_animations=true&exclude_repo=spify-worker" /></Box>,
             ]
