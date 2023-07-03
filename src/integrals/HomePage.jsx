@@ -60,6 +60,17 @@ const HomePage = (props) => {
 
     /* Define Printing States */
     const [printing, setPrinting] = React.useState(false);
+    const sendPrintRequest = () => {
+        /* Prepare for Print */
+        toggleBackdrop("🖨️ Preparing for Printing...");
+        window.scrollTo(0, 0);
+        setPrinting(true);
+
+        /* Switch Theme */
+        localStorage.setItem('printTheme', localStorage.getItem("theme"));
+        if (getCurrentTheme() == "dark") props.toggleTheme();
+    }
+
     React.useEffect(() => {
         window.addEventListener("keydown", (e) => {
             if (e.ctrlKey && e.keyCode == 80) {
@@ -67,13 +78,8 @@ const HomePage = (props) => {
                 e.preventDefault();
                 e.stopPropagation();
 
-                /* Prepare for Print */
-                toggleBackdrop("🖨️ Preparing for Printing...");
-                setPrinting(true);
-
-                /* Switch Theme */
-                localStorage.setItem('printTheme', localStorage.getItem("theme"));
-                if (getCurrentTheme() == "dark") props.toggleTheme();
+                /* Send Print Request */
+                sendPrintRequest();
             }
         });
 
@@ -105,13 +111,13 @@ const HomePage = (props) => {
                 width: '100%',
                 height: '100%',
             }}>
-                <IntroductionHomePage printing={printing} passRef={introductionHomePageRef} handleNav={handleNav} appBarLinks={appBarLinks} toggleTheme={props.toggleTheme} />
+                <IntroductionHomePage sendPrintRequest={sendPrintRequest} printing={printing} passRef={introductionHomePageRef} handleNav={handleNav} appBarLinks={appBarLinks} toggleTheme={props.toggleTheme} />
                 <EducationHomePage printing={printing} passRef={educationHomePageRef} />
-                <Divider />
+                <Divider sx={{ "@media print": { display: 'none' } }} />
                 <SkillsHomePage passRef={skillsHomePageRef} />
-                <Divider />
+                <Divider sx={{ "@media print": { display: 'none' } }} />
                 <OpenSourceHomePage passRef={openSourceHomePageRef} />
-                <Divider />
+                <Divider sx={{ "@media print": { display: 'none' } }} />
                 <LicenseFooter sx={{ "@media print": { display: 'none' } }} />
             </Box>
         </>

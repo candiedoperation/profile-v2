@@ -6,21 +6,14 @@ import "@fontsource/inter/900.css";
 import Typewriter from "typewriter-effect";
 import { getCurrentTheme, toggleTheme } from '../middleware/AppThemeController';
 import AppDataController from '../middleware/AppDataController';
-import { Download } from '@mui/icons-material';
+import { Download, Print } from '@mui/icons-material';
 
 const IntroductionHomePage = (props) => {
-    const profileOneRef = React.useRef();
-    const [contentMarginLeft, setContentMarginRight] = React.useState(null);
+    const [contentMarginLeft, setContentMarginLeft] = React.useState(null);
     const scrollTrigger = useScrollTrigger({
         disableHysteresis: true,
         threshold: (window.innerHeight - 64)
     });
-
-    React.useEffect(() => {
-        setTimeout(() => {
-            setContentMarginRight(`${profileOneRef.current.offsetWidth - 150}px`);
-        }, 100);
-    }, [profileOneRef.current]);
 
     return (
         <Box ref={props.passRef} sx={{
@@ -42,7 +35,7 @@ const IntroductionHomePage = (props) => {
                  background: (scrollTrigger == false) ? 
                     'transparent' : '*',
             }}>
-                <Toolbar>
+                <Toolbar sx={{ height: '64px' }}>
                     <Typography sx={{ flexGrow: 1, fontFamily: 'inter', fontSize: '1.5rem' }}>
                         ATHEESH.ORG
                     </Typography>
@@ -63,7 +56,7 @@ const IntroductionHomePage = (props) => {
                 </Toolbar>
             </AppBar>
             <Box sx={{ display: 'flex', justifyContent: { xs: 'center', lg: 'start' }, marginTop: '64px', height: '100%', width: '100%' }}>
-                <Box sx={{ marginLeft: { sx: '0px', lg: contentMarginLeft }, "@media print": { marginTop: '30px' }, marginTop: { xs: '0px', lg: '50px' } }}>
+                <Box sx={{ display: (contentMarginLeft != null) ? 'block' : 'none', marginLeft: { sx: '0px', lg: contentMarginLeft }, "@media print": { marginTop: '30px' }, marginTop: { xs: '0px', lg: '50px' } }}>
                     <Box sx={{
                         width: 'fit-content', 
                         display: 'flex', 
@@ -77,6 +70,7 @@ const IntroductionHomePage = (props) => {
                     <Box sx={{ marginTop: '15px', "@media print": { display: 'none' } }}>
                         { /* Define Actions Here */ }
                         <Button startIcon={<Download />} color='secondary' variant="contained">Download my Resume</Button>
+                        <Button onClick={props.sendPrintRequest} startIcon={<Print />} sx={{ marginLeft: '10px' }} variant="contained">Print CV</Button>
                     </Box>
                 </Box>
                 <Box sx={{
@@ -87,7 +81,7 @@ const IntroductionHomePage = (props) => {
                     maxWidth: '100%',
                     pointerEvents: 'none',
                 }}>
-                    <img ref={profileOneRef} style={{ 
+                    <img onLoad={(e) => { setContentMarginLeft(`${e.target.width - 150}px`) }} style={{ 
                             zIndex: (scrollTrigger == false) ? 1200 : 1000, 
                             height: '100%',
                             maxWidth: 'inherit',

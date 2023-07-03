@@ -58,15 +58,27 @@ const getCurrentThemeComponent = () => {
         }
     };
 
+    let customComponents = {
+        MuiListItem: {
+            styleOverrides: {
+                root: {
+                    "@media print": { pageBreakInside: 'avoid' }
+                }
+            }
+        }
+    };
+
     switch (getCurrentTheme()) {
         case "light":
             return createTheme({
-                palette: paletteLight
+                palette: paletteLight,
+                components: customComponents
             })
 
         case "dark":
             return createTheme({
-                palette: paletteDark
+                palette: paletteDark,
+                components: customComponents
             });
     }
 }
