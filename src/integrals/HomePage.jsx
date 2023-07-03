@@ -6,6 +6,7 @@ import SkillsHomePage from '../components/SkillsHomePage';
 import { getCurrentTheme, setCurrentTheme } from '../middleware/AppThemeController';
 import LicenseFooter from '../components/LicenseFooter';
 import OpenSourceHomePage from '../components/OpenSourceHomePage';
+import ContactHomePage from '../components/ContactHomePage';
 
 const HomePage = (props) => {
     const [backdropOpen, setBackdropOpen] = React.useState(false);
@@ -13,8 +14,9 @@ const HomePage = (props) => {
     const introductionHomePageRef = React.useRef();
     const openSourceHomePageRef = React.useRef();
     const educationHomePageRef = React.useRef();
+    const contactHomePageRef = React.useRef();
     const skillsHomePageRef = React.useRef();
-    const appBarLinks = ["Hello!", "Education", "Skills", "Open Source"];
+    const appBarLinks = ["Hello!", "Education", "Skills", "Open Source", "Contact"];
 
     const handleNav = (navLink) => {
         switch (navLink.toLowerCase()) {
@@ -40,7 +42,13 @@ const HomePage = (props) => {
                 if (openSourceHomePageRef.current)
                     openSourceHomePageRef.current.scrollIntoView({ behavior: 'smooth' });
 
-                break;    
+                break;
+                
+            case "contact":
+                if (contactHomePageRef.current)
+                    contactHomePageRef.current.scrollIntoView({ behavior: 'smooth' });
+
+                break;
 
             default:
                 console.log(`pressed ${navLink.toLowerCase()}`)
@@ -69,7 +77,7 @@ const HomePage = (props) => {
         /* Switch Theme */
         localStorage.setItem('printTheme', localStorage.getItem("theme"));
         if (getCurrentTheme() == "dark") props.toggleTheme();
-    }
+    };
 
     React.useEffect(() => {
         window.addEventListener("keydown", (e) => {
@@ -117,6 +125,8 @@ const HomePage = (props) => {
                 <SkillsHomePage passRef={skillsHomePageRef} />
                 <Divider sx={{ "@media print": { display: 'none' } }} />
                 <OpenSourceHomePage passRef={openSourceHomePageRef} />
+                <Divider sx={{ "@media print": { display: 'none' } }} />
+                <ContactHomePage passRef={contactHomePageRef} />
                 <Divider sx={{ "@media print": { display: 'none' } }} />
                 <LicenseFooter sx={{ "@media print": { display: 'none' } }} />
             </Box>

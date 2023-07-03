@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, useParams } from "react-router-dom";
 import { Box, CssBaseline, LinearProgress, ThemeProvider, Typography } from '@mui/material';
 import { getCurrentTheme, getCurrentThemeComponent, toggleTheme } from './middleware/AppThemeController';
 import HomePage from './integrals/HomePage';
@@ -17,11 +17,17 @@ function App() {
     setThemeMode(getCurrentTheme())
   }
 
+  const OpenSourceRouter = () => {
+    let { repository } = useParams();
+    window.location = `https://github.com/candiedoperation/${repository}`;
+  }
+
   return (
     <ThemeProvider theme={appTheme}>
       <CssBaseline />
       <Routes>
         <Route path="/" element={<HomePage toggleTheme={toggleThemeWrapper} />} exact></Route>
+        <Route path="/opensource/:repository" element={<OpenSourceRouter />} exact />
       </Routes>
     </ThemeProvider>
   );

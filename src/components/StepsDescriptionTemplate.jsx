@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { List, ListItem, ListItemIcon, ListItemText, ListSubheader, Step, StepButton, StepContent, Stepper, Typography } from "@mui/material";
+import { Box, List, ListItem, ListItemIcon, ListItemText, ListSubheader, Step, StepButton, StepContent, Stepper, Typography } from "@mui/material";
 import "@fontsource/inter/900.css";
 import { SubdirectoryArrowRight } from '@mui/icons-material';
+import { getCurrentTheme } from '../middleware/AppThemeController';
 
 const StepsDescriptionTemplate = (props) => {
     const [activeStep, setActiveStep] = React.useState(0);
@@ -39,6 +40,9 @@ const StepsDescriptionTemplate = (props) => {
                                         ))
                                     }
                                 </List>
+                                <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', width: '100%' }}>
+                                    {school.dynamic}
+                                </Box>
                             </StepContent>
                         </Step>
                     ))

@@ -1,4 +1,6 @@
-import { AutoFixHigh, Storage, EmojiEvents, Forest, LunchDining, Terminal, Theaters, Policy, Public, Memory, Lan, VpnLock, Forum, Code } from "@mui/icons-material";
+import { AutoFixHigh, Storage, EmojiEvents, Forest, LunchDining, Terminal, Theaters, Policy, Public, Memory, Lan, VpnLock, Forum, Code, CloudSync, DesktopWindows, DevicesOther, Visibility, Sync, HourglassTop, Dvr, RocketLaunch, Email, LinkedIn, Twitter, Reddit, GitHub, YouTube } from "@mui/icons-material";
+import { Box } from "@mui/material";
+import { getCurrentTheme } from "./AppThemeController";
 
 const getEducationHomePageContent = () => {
     return ([
@@ -113,7 +115,7 @@ const getSkillsHomePageContent = () => {
                         description: "Experienced with deploying and configuring a simple Docker Environment on Linux (Docker CLI and Portainer). Managed 10+ containers in a personal environment. Built projects and created their images using Dockerfile."
                     },
                     {
-                        icon: <Public />,
+                        icon: <CloudSync />,
                         name: "BackupPC Server",
                         description: "Configured a central, automatic, incremental backup server using BackupPC on Linux. Deployed and Managed a server capable serving 10 clients with 3000GB compressed data on Disk."
                     },
@@ -155,7 +157,7 @@ const getSkillsHomePageContent = () => {
                     {
                         icon: <Code />,
                         name: "Vala",
-                        description: "Introduced to Vala while developing applications for elementaryOS (A Linux Distro). Developed an open-source Pomodoro Timer with a sleek User Interface. Read more at https://github.com/candiedoperation/ordne"
+                        description: "Introduced to Vala while developing applications for elementaryOS (A Linux Distro). Developed an open-source Pomodoro Timer with a sleek User Interface. Read more at https://about.atheesh.org/opensource/ordne"
                     }
                 ]
             }
@@ -170,16 +172,99 @@ const getOpenSourceHomePageContent = () => {
             subtitle: 'https://github.com/candiedoperation',
             activities: {
                 "Computer Software": [
-                    
+                    {
+                        icon: <DesktopWindows />,
+                        name: "SpifyRFB",
+                        description: "Spify is a VNC Server based on Remote Framebuffer Protocol written from scratch. On Linux, it interacts directly with the X11 server to capture the screen and to emit Keyboard and Mouse events from the remote endpoint. On Windows, the Spify Daemon runs as a Service (Directly interacting with Win32 Services API). It provides a WebAPI for the Spify WebClient, uses the Win32 API to detect Logon Events, Enumerate Console and RDP Sessions and spawn a Spify Protocol instance with appropriate priviledges. Owing to the presence of the Daemon, it captures UAC Prompts and Logon Screens. Natively supports TCP and Websocket (noVNC) transports. Supports Industry Standard VNC protocols, encodings and mechanisms. Know more at https://about.atheesh.org/opensource/spifyrfb-v2"
+                    },
+                    {
+                        icon: <Dvr />,
+                        name: "Spify Web Client",
+                        description: "The Spify Web Client interacts with the WebAPI provided by the Spify Daemon. It's client side is built with ReactJS and the server relies on NodeJS, Express and MongoDB. Authentication methods support native and LDAP. Supports organizing computers into locations thereby, providing access to specific LDAP Groups or native roles. The frontend poses an intuitive UI, featuring the MaterialUI Framework, with thumbnails, quick settings and click-to-expand cards for every computer. DockerFile and Deploy Images at https://about.atheesh.org/opensource/spify-deploy. Know more about the Frontend at https://about.atheesh.org/opensource/spify and the backend at https://about.atheesh.org/opensource/spify-server"
+                    },
+                    {
+                        icon: <Visibility />,
+                        name: "Monitoring Center, An app for Veyon",
+                        description: "Veyon, developed by veyon.io, provides a platform to monitor computer screens in a classroom environment. To bridge the gap further, I developed an Android / iOS Client (React Native) for Veyon. This facilitates a hassle-free experience among teachers and administrators to monitor computers on-the-go. Available on the Amazon Appstore. Know more at https://about.atheesh.org/opensource/Monitoring-Center"
+                    },
+                    {
+                        icon: <Sync />,
+                        name: "Status Center",
+                        description: "A simple and intuitive React Native app that helps you check the status of services hosted by your server. It's a wrapper around Telnet and uses TCP Connections to check whether the service responds on connection. Available on the Amazon Appstore. Know more at https://about.atheesh.org/opensource/Status-Center"
+                    },
+                    {
+                        icon: <HourglassTop />,
+                        name: "Ordne",
+                        description: "A simple Pomodoro timer with a Modern, Clean and Beautiful User Interface. Written in Vala for elementaryOS, follows elementaryOS style guidelines and implements it's Granite UI Framework. Published on the their Flathub Repo. Know more at https://about.atheesh.org/opensource/ordne"
+                    },
+                    {
+                        icon: <CloudSync />,
+                        name: "BackupPC GUI for Windows",
+                        description: "An easy-to-use app that helps configure backup paths and security options while implementing a cross-platform BackupPC Client. Facilitates a GUI for deploying a BPC Client and registering it with the BackupPC Server. It's under development and you can Know more at https://about.atheesh.org/opensource/BackupPC-Desktop-Client"
+                    },
+                    {
+                        icon: <RocketLaunch />,
+                        name: "Fliger Launcher for Linux",
+                        description: "Fliger is an electron-based, open source launcher for Linux. Features a Blazing-fast Search, Realtime file preview, App Launcher, Math, Unit Conversion and other addons, all in a single search bar. It's under development and aims to be the Linux standard for Spotlight. Know more at https://about.atheesh.org/opensource/fliger-legacy"
+                    }
                 ],
             }
         },
         {
             title: "Statistics",
             subtitle: 'from GitHub',
-            activities: {}
+            activities: {},
+            dynamic: [
+                <Box sx={{ "@media print": { width: '50%' }, width: { xs: '100%', md: '50%' }, filter: (getCurrentTheme() == "light") ? 'unset' : 'invert(1) hue-rotate(100deg)', flexGrow: 1 }}><img style={{ height: '100%', width: '100%' }} src="https://github-readme-stats.vercel.app/api?username=candiedoperation&show_icons=true&rank_icon=percentile&show=reviews,discussions_started,discussions_answered&include_all_commits=true&disable_animations=true" /></Box>,
+                <Box sx={{ "@media print": { width: '50%' }, width: { xs: '100%', md: '50%' }, padding: '14px', filter: (getCurrentTheme() == "light") ? 'unset' : 'invert(1) hue-rotate(100deg)', flexGrow: 1 }}><img style={{ height: '100%', width: '100%' }} src="https://github-readme-stats.vercel.app/api/top-langs/?username=candiedoperation&layout=donut&disable_animations=true&exclude_repo=spify-worker" /></Box>,
+            ]
         }
     ]);
+}
+
+const getContactHomePageContent = () => {
+    return({
+        "Email": {
+            icon: <Email />,
+            content: "howdy@atheesh.org",
+            redirect: "mailto:howdy@atheesh.org"
+        },
+        "LinkedIn": {
+            icon: <LinkedIn />,
+            content: "atheesht",
+            redirect: "https://ca.linkedin.com/in/atheesht",
+        },
+        "StackOverflow": {
+            icon: <Forum />,
+            content: "Atheesh Thirumalairajan",
+            redirect: "https://stackoverflow.com/users/14176786/atheesh-thirumalairajan?tab=topactivity"
+        },
+        "Twitter": {
+            icon: <Twitter />,
+            content: "@cand_operation",
+            redirect: "https://twitter.com/cand_operation"
+        },
+        "Reddit": {
+            icon: <Reddit />,
+            content: "candiedoperation",
+            redirect: "https://reddit.com/user/candiedoperation"
+        },
+        "GitHub": {
+            icon: <GitHub />,
+            content: "candiedoperation",
+            redirect: "https://github.com/candiedoperation"
+        },
+        "GitLab": {
+            icon: <Code />,
+            content: "candiedoperation",
+            redirect: "https://gitlab.com/candiedoperation"
+        },
+        "YouTube": {
+            icon: <YouTube />,
+            content: "@atheesh",
+            redirect: "https://youtube.com/@atheesh"
+        }
+    });
 }
 
 const getIntroductionHomePageContent = () => {
@@ -191,4 +276,4 @@ const getIntroductionHomePageContent = () => {
     ]);
 }
 
-export default { getEducationHomePageContent, getIntroductionHomePageContent, getSkillsHomePageContent, getOpenSourceHomePageContent }
+export default { getEducationHomePageContent, getIntroductionHomePageContent, getSkillsHomePageContent, getOpenSourceHomePageContent, getContactHomePageContent }

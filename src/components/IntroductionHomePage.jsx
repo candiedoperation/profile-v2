@@ -70,7 +70,7 @@ const IntroductionHomePage = (props) => {
                     <Box sx={{ marginTop: '15px', "@media print": { display: 'none' } }}>
                         { /* Define Actions Here */ }
                         <Button startIcon={<Download />} color='secondary' variant="contained">Download my Resume</Button>
-                        <Button onClick={props.sendPrintRequest} startIcon={<Print />} sx={{ marginLeft: '10px' }} variant="contained">Print CV</Button>
+                        <Button onClick={props.sendPrintRequest} startIcon={<Print />} sx={{ display: { xs: "none", md: "inline flex" }, marginLeft: '10px' }} variant="contained">Print CV</Button>
                     </Box>
                 </Box>
                 <Box sx={{
