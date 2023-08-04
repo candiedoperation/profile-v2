@@ -1,4 +1,4 @@
-import { AutoFixHigh, Storage, EmojiEvents, Forest, LunchDining, Terminal, Theaters, Policy, Public, Memory, Lan, VpnLock, Forum, Code, CloudSync, DesktopWindows, DevicesOther, Visibility, Sync, HourglassTop, Dvr, RocketLaunch, Email, LinkedIn, Twitter, Reddit, GitHub, YouTube } from "@mui/icons-material";
+import { AutoFixHigh, Storage, EmojiEvents, Forest, LunchDining, Terminal, Theaters, Policy, Public, Memory, Lan, VpnLock, Forum, Code, CloudSync, DesktopWindows, DevicesOther, Visibility, Sync, HourglassTop, Dvr, RocketLaunch, Email, LinkedIn, Twitter, Reddit, GitHub, YouTube, WorkspacePremium } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import { getCurrentTheme } from "./AppThemeController";
 
@@ -73,6 +73,13 @@ const getSkillsHomePageContent = () => {
             title: "Networking",
             subtitle: '',
             activities: {
+                "Certifications": [
+                    {
+                        icon: <WorkspacePremium />,
+                        name: "Cisco Certified Network Associate (CCNA, 200-301)",
+                        description: "Credential ID: e48328b11c294fa3ad80eb909046dbef, Credly: https://www.credly.com/badges/06d70ce4-c14e-4b29-a6f4-e4388f098e08"
+                    },
+                ],
                 "Configuration and Deployment": [
                     {
                         icon: <Lan />,
@@ -269,6 +276,7 @@ const getContactHomePageContent = () => {
 
 const getIntroductionHomePageContent = () => {
     return ([
+        "a CCNA",
         "a Networking Enthusiast", 
         "a Software Developer", 
         "a SysAdmin", 

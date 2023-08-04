@@ -13,7 +13,7 @@ const SkillsHomePage = (props) => {
                 <Typography variant="h2" sx={{ fontFamily: 'inter' }}>Skills</Typography>
                 <Alert sx={{ marginTop: '20px', marginBottom: '15px', width: { xs: '100%', md: "80%", lg: "70%" } }} severity='info' color='secondary'>
                     <AlertTitle>Things I'd be keen on telling you</AlertTitle>
-                    I've developed apps using Rust, JavaScript (NodeJS, React and Express), Java and Vala
+                    I'm a Cisco Certified Network Associate (CCNA). I've developed apps using Rust, JavaScript (NodeJS, React and Express), Java and Vala
                 </Alert>
                 <StepsDescriptionTemplate expanded data={AppDataController.getSkillsHomePageContent()} />
             </Box>
