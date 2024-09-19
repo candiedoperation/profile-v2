@@ -1,4 +1,4 @@
-import { AutoFixHigh, Storage, EmojiEvents, Forest, LunchDining, Terminal, Theaters, Policy, Public, Memory, Lan, VpnLock, Forum, Code, CloudSync, DesktopWindows, DevicesOther, Visibility, Sync, HourglassTop, Dvr, RocketLaunch, Email, LinkedIn, Twitter, Reddit, GitHub, YouTube, WorkspacePremium } from "@mui/icons-material";
+import { AutoFixHigh, Storage, EmojiEvents, Forest, LunchDining, Terminal, Theaters, Policy, Public, Memory, Lan, VpnLock, Forum, Code, CloudSync, DesktopWindows, DevicesOther, Visibility, Sync, HourglassTop, Dvr, RocketLaunch, Email, LinkedIn, Twitter, Reddit, GitHub, YouTube, WorkspacePremium, Computer } from "@mui/icons-material";
 import { Box } from "@mui/material";
 import { getCurrentTheme } from "./AppThemeController";
 
@@ -6,64 +6,22 @@ const getEducationHomePageContent = () => {
     return ([
         {
             title: "University of Maryland, College Park",
-            subtitle: 'BS, Computer Engineering (2023 - 2027)',
-            activities: {
-                Courses: [
-                    {
-                        name: "MATH140 (Calculus I)",
-                        description: "Introduction to calculus, including functions, limits, continuity, derivatives and applications of the derivative, sketching of graphs of functions, definite and indefinite integrals, and calculation of area."
-                    },
-                    {
-                        name: "CMSC131 (Object Oriented Programming I)",
-                        description: "Programming done in Java, Emphasizes understanding and implementation of applications using object-oriented techniques. Develops skills such as program design and testing as well as implementation of programs using a graphical IDE."
-                    }
-                ]
-            }
-        },
-        {
-            title: "Ryan International School, Navi Mumbai",
-            subtitle: 'Grades 1 and 12 (2010 - 2022), Press to Expand',
+            subtitle: 'B.S. in Computer Science (GPA 3.9/4.0, CS Honors Program)',
             activities: {
                 "Leadership" : [
                     {
-                        icon: <Theaters />,
-                        name: "School Media Leader",
-                        description: "I led an 11-member team which won the best country profile award among 100+ participating schools in the Indian Model United Nations (INMUN)" 
-                    }, {
-                        icon: <AutoFixHigh />,
-                        name: "VFX and Media Production Leader",
-                        description: "I led and mentored an 8-member team to stage the first-ever 3D Mapping dance. The performance was a huge success and 2000+ people experienced it on Graduation Day at school."
-                    }, {
                         icon: <Terminal />,
-                        name: "Primary Software Developer",
-                        description: "Created an automatic form filler using C# which helped reduce the effort of manually filling 10 subject-specific forms for each of the 400+ students at senior-high-school"
-                    }
-                ],
-                "Awards": [
-                    {
-                        icon: <EmojiEvents />,
-                        name: "Tech Whiz Award",
-                        description: "Awarded to one student from all grades in High School who has exceptional technological skills and who has made an immense, positive technological impact to the school"
-                    }, {
-                        icon: <EmojiEvents />,
-                        name: "Tech Savvy Award",
-                        description: "Awarded to a student who has extraordinary mentoring skills and who stands out in technology-related practical knowledge and experience among all students from High School"
-                    }
-                ],
-                "Clubs and Community Service": [
-                    {
-                        icon: <Forest />,
-                        name: "Enivronmental Awareness Club",
-                        description: "Designed and exhibited a working model of a solar-powered LED lantern to demonstrate the benefits of renewable energy sources such as carbon footprint reduction & cost savings. Planted saplings, awareness by walks to avoid use of non-biodegradables"
+                        name: "Director | App Development Club",
+                        description: "I lead a six person team that creates new products and services for the club’s internal use in areas ranging from Talent Acquisition to Stakeholder Interaction. Furthermore, I lead talent acquisition for Technical Innovations, designed interviews and selected the best people from a highly competitive pool of 300+ applicants."
                     },
                     {
-                        icon: <LunchDining />,
-                        name: "Orphan Support Intiative",
-                        description: "Part of the 'Food Bucket' initiative which was a donation drive organized by the school to support orphans and to strive for a no-hunger society."
+                        icon: <Terminal />,
+                        name: "Mentor and Judge | BitCamp 2024",
+                        description: "I mentored 30+ teams on all parts of the software development lifecycle and I was a part of the judging panel that selected the best project from over 40 projects under the App Development Track."
                     }
-                ]
+                ],
             }
-        }
+        },
     ]);
 }
 
@@ -180,6 +138,11 @@ const getOpenSourceHomePageContent = () => {
             activities: {
                 "Computer Software": [
                     {
+                        icon: <Computer />,
+                        name: "tacOS",
+                        description: "Actively developing tacOS, an x86-64 operating system using C++ and Assembly. Wrote the kernel from scratch with implementations for Multiboot Compliance, Physical and Virtual Memory Management and support for ACPI, IO/APIC, Text Video output, Keyboard Input and Kernel interrupts. Know more at https://github.com/candiedoperation/tacos"
+                    },
+                    {
                         icon: <DesktopWindows />,
                         name: "SpifyRFB",
                         description: "Spify is a VNC Server based on Remote Framebuffer Protocol written from scratch. On Linux, it interacts directly with the X11 server to capture the screen and to emit Keyboard and Mouse events from the remote endpoint. On Windows, the Spify Daemon runs as a Service (Directly interacting with Win32 Services API). It provides a WebAPI for the Spify WebClient, uses the Win32 API to detect Logon Events, Enumerate Console and RDP Sessions and spawn a Spify Protocol instance with appropriate priviledges. Owing to the presence of the Daemon, it captures UAC Prompts and Logon Screens. Natively supports TCP and Websocket (noVNC) transports. Supports Industry Standard VNC protocols, encodings and mechanisms. Know more at https://about.atheesh.org/opensource/spifyrfb-v2"
@@ -239,7 +202,7 @@ const getContactHomePageContent = () => {
         "LinkedIn": {
             icon: <LinkedIn />,
             content: "atheesht",
-            redirect: "https://ca.linkedin.com/in/atheesht",
+            redirect: "https://www.linkedin.com/in/atheesht",
         },
         "StackOverflow": {
             icon: <Forum />,
@@ -276,10 +239,10 @@ const getContactHomePageContent = () => {
 
 const getIntroductionHomePageContent = () => {
     return ([
-        "a CCNA",
         "a Networking Enthusiast", 
         "a Software Developer", 
         "a SysAdmin", 
+        "a CompSci Major",
         "a Terp!"
     ]);
 }

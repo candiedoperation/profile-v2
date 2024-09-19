@@ -7,9 +7,10 @@ import Typewriter from "typewriter-effect";
 import { getCurrentTheme, toggleTheme } from '../middleware/AppThemeController';
 import AppDataController from '../middleware/AppDataController';
 import { Download, Print } from '@mui/icons-material';
+import { BasePath } from '../middleware/AppBasePathController';
 
 const IntroductionHomePage = (props) => {
-    const [contentMarginLeft, setContentMarginLeft] = React.useState(null);
+    const [contentMarginLeft, setContentMarginLeft] = React.useState(10);
     const scrollTrigger = useScrollTrigger({
         disableHysteresis: true,
         threshold: (window.innerHeight - 64)
@@ -21,7 +22,7 @@ const IntroductionHomePage = (props) => {
             flexDirection: 'column',
             width: '100%',
             height: '100%',
-            background: 'rgba(0, 0, 0, 0.8) url("https://source.unsplash.com/random?planet")',
+            background: `rgba(0, 0, 0, 0.2) url("${BasePath}/profile01.png")`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundBlendMode: 'darken',
@@ -60,20 +61,22 @@ const IntroductionHomePage = (props) => {
                     <Box sx={{
                         width: 'fit-content', 
                         display: 'flex', 
-                        flexDirection: 'row', 
+                        flexDirection: 'row',
+                        bgcolor: 'primary.main',  
+                        padding: '0px 10px 0px 10px',
                     }}>
                         <Typography sx={{ fontFamily: 'inter', "@media print": { fontSize: '2rem' }, fontSize: { xs: '1rem', sm: '2rem' } }}>I'm&nbsp;</Typography>
                         <Typography inline sx={{ "@media print": { display: 'none' }, fontFamily: 'inter', fontSize: { xs: '1rem', sm: '2rem' } }}><Typewriter options={{ strings: AppDataController.getIntroductionHomePageContent(), autoStart: true, loop: true }} /></Typography>
                     </Box>
-                    <Typography sx={{ fontFamily: 'inter', "@media print": { fontSize: '4rem' }, fontSize: { xs: '2rem', sm: '4rem' }, color: 'primary.main', lineHeight: 1 }}>Atheesh</Typography>
-                    <Typography sx={{ fontFamily: 'inter', "@media print": { fontSize: '4rem' }, fontSize: { xs: '2rem', sm: '4rem' }, color: 'primary.main', lineHeight: 1 }}>Thirumalairajan</Typography>
+                    <Typography sx={{ marginTop: '5px', bgcolor: 'primary.main', maxWidth: 'fit-content', padding: '0px 8px 0px 8px', fontFamily: 'inter', "@media print": { fontSize: '4rem' }, fontSize: { xs: '2rem', sm: '4rem' }, color: 'black', lineHeight: 1 }}>Atheesh</Typography>
+                    {/*<Typography sx={{ marginTop: '5px', bgcolor: 'primary.main', fontFamily: 'inter', "@media print": { fontSize: '4rem' }, fontSize: { xs: '2rem', sm: '4rem' }, color: 'black', lineHeight: 1 }}>Thirumalairajan</Typography> */}
                     <Box sx={{ marginTop: '15px', "@media print": { display: 'none' } }}>
                         { /* Define Actions Here */ }
                         <Button startIcon={<Download />} color='secondary' variant="contained">Download my Resume</Button>
                         <Button onClick={props.sendPrintRequest} startIcon={<Print />} sx={{ display: { xs: "none", md: "inline flex" }, marginLeft: '10px' }} variant="contained">Print CV</Button>
                     </Box>
                 </Box>
-                <Box sx={{
+                {/*<Box sx={{
                     position: 'absolute', 
                     bottom: '0px', 
                     height: { xs: '70%', lg: '97%' }, 
@@ -90,7 +93,7 @@ const IntroductionHomePage = (props) => {
                             bottom: '0px'
                         }} src="/profile01.png" 
                     /> 
-                </Box>
+                    </Box>*/}
             </Box>
         </Box>
     )
