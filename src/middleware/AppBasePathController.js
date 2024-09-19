@@ -1,1 +1,1 @@
-export const BasePath = "/~atheesh";
+export const BasePath = "";
